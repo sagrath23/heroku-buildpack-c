@@ -32,7 +32,8 @@ else
   echo "-----> start to configure GECODE"
   ./configure --disable-examples
   echo "-----> compiling GECODE"
-  #make
+  make
+  echo "-----> leaving GECODE directory"
   cd ..
 fi
 
