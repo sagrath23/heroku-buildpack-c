@@ -16,29 +16,26 @@ function indent() {
 }
 
 cd $BUILD_DIR
-if [ -d "/app" ]; then
-  echo "-----> /app dir exists!!!, lets move files to them"
+if [ -d "/app/gecode" ]; then
+  echo "-----> /app/gecode exists, just compile solver"
+else 
+  echo "-----> Downloading GECODE"
+  #download gecode
+  wget https://github.com/Gecode/gecode/archive/release-6.0.0.zip
+  echo "-----> Unpacking GECODE"
+  #unpack gecode
+  unzip release-6.0.0.zip
+  #go to gecode's folder
+  cd gecode-release-6.0.0
+  echo "-----> start to configure GECODE"
+  ./configure --disable-examples
+  echo "-----> compiling GECODE"
+  make
+  echo "-----> moving compiled GECODE to /app folder"
+  #copy files to app & linking
+  cd ..
+  cp -R gecode-release-6.0.0 /app/gecode
 fi
-echo "-----> Downloading GECODE"
-#download gecode
-wget https://github.com/Gecode/gecode/archive/release-6.0.0.zip
-echo "-----> get position ----------------->"
-pwd
-
-echo "-----> Unpacking GECODE"
-#unpack gecode
-unzip release-6.0.0.zip
-#go to gecode's folder
-cd gecode-release-6.0.0
-echo "-----> start to configure GECODE"
-./configure --disable-examples
-echo "-----> compiling GECODE"
-make
-
-echo "-----> installing GECODE"
-#TODO: if install isn't possible, then copy files to app & linking
-make install
-
 # configure
 if [ -f configure ]; then
   echo "-----> Configuring"
