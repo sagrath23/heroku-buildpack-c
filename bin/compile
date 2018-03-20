@@ -19,6 +19,8 @@ cd $BUILD_DIR
 echo "-----> Downloading GECODE"
 #download gecode
 wget https://github.com/Gecode/gecode/archive/release-6.0.0.zip
+echo "-----> get position ----------------->"
+pwd
 echo "-----> Unpacking GECODE"
 #unpack gecode
 unzip release-6.0.0.zip
@@ -28,8 +30,10 @@ echo "-----> start to configure GECODE"
 ./configure --disable-examples
 echo "-----> compiling GECODE"
 make
+
 echo "-----> installing GECODE"
-make install
+#TODO: if install isn't possible, then copy files to app & linking
+sudo make install
 # configure
 if [ -f configure ]; then
   echo "-----> Configuring"
