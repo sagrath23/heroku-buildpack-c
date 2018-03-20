@@ -16,19 +16,19 @@ function indent() {
 }
 
 cd $BUILD_DIR
-echo "Downloading GECODE"
+echo "-----> Downloading GECODE"
 #download gecode
 wget https://github.com/Gecode/gecode/archive/release-6.0.0.zip
-echo "Unpacking GECODE"
+echo "-----> Unpacking GECODE"
 #unpack gecode
 unzip release-6.0.0.zip
 #go to gecode's folder
 cd gecode-release-6.0.0
-echo "start to configure GECODE"
-./configure
-echo "compiling GECODE"
+echo "-----> start to configure GECODE"
+./configure --disable-examples
+echo "-----> compiling GECODE"
 make
-echo "installing GECODE"
+echo "-----> installing GECODE"
 make install
 # configure
 if [ -f configure ]; then
