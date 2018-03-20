@@ -28,13 +28,14 @@ else
   unzip release-6.0.0.zip -d gecode
   ls
   #go to gecode's folder
+  echo "-----> Moving to GECODE folder"
   cd gecode
   echo "-----> start to configure GECODE"
   ./configure --disable-examples
   echo "-----> compiling GECODE"
   #make
+  cd ..
 fi
-
 # configure
 if [ -f configure ]; then
   echo "-----> Configuring"
@@ -43,4 +44,4 @@ fi
 
 # make
 echo "-----> Compiling with Make..."
-#make all-heroku | indent
+make all-heroku | indent
