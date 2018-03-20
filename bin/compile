@@ -22,8 +22,14 @@ wget https://github.com/Gecode/gecode/archive/release-6.0.0.zip
 echo "Unpacking GECODE"
 #unpack gecode
 unzip release-6.0.0.zip
-#check files
-ls
+#go to gecode's folder
+cd gecode-release-6.0.0
+echo "start to configure GECODE"
+./configure
+echo "compiling GECODE"
+make
+echo "installing GECODE"
+make install
 # configure
 if [ -f configure ]; then
   echo "-----> Configuring"
