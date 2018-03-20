@@ -16,7 +16,14 @@ function indent() {
 }
 
 cd $BUILD_DIR
-
+echo "Downloading GECODE"
+#download gecode
+wget https://github.com/Gecode/gecode/archive/release-6.0.0.zip
+echo "Unpacking GECODE"
+#unpack gecode
+unzip release-6.0.0.zip
+#check files
+ls
 # configure
 if [ -f configure ]; then
   echo "-----> Configuring"
@@ -24,5 +31,5 @@ if [ -f configure ]; then
 fi
 
 # make
-echo "-----> Compiling with Make"
+echo "-----> Compiling with Make..."
 make 2>&1 | indent
