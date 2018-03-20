@@ -21,6 +21,7 @@ echo "-----> Downloading GECODE"
 wget https://github.com/Gecode/gecode/archive/release-6.0.0.zip
 echo "-----> get position ----------------->"
 pwd
+
 echo "-----> Unpacking GECODE"
 #unpack gecode
 unzip release-6.0.0.zip
@@ -33,7 +34,11 @@ make
 
 echo "-----> installing GECODE"
 #TODO: if install isn't possible, then copy files to app & linking
+if [ -d "/app" ]; then
+  echo "-----> /app dir exists!!!, lets move files to them"
+fi
 sudo make install
+
 # configure
 if [ -f configure ]; then
   echo "-----> Configuring"
