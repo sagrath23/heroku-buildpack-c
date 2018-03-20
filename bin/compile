@@ -36,6 +36,10 @@ else
   cd ..
   cp -R gecode-release-6.0.0 /app/gecode
 fi
+echo "-----> moving to /app folder"
+cd /app
+echo "-----> content of app folder"
+ls 
 # configure
 if [ -f configure ]; then
   echo "-----> Configuring"
