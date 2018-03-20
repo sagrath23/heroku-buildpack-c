@@ -22,10 +22,11 @@ if [ -d "/app/gecode" ]; then
 else 
   echo "-----> Downloading GECODE"
   #download gecode
-  #wget https://github.com/Gecode/gecode/archive/release-6.0.0.zip
+  wget https://github.com/Gecode/gecode/archive/release-6.0.0.zip
   echo "-----> Unpacking GECODE"
   #unpack gecode
-  #unzip release-6.0.0.zip
+  unzip release-6.0.0.zip
+  ls
   #go to gecode's folder
   #cd gecode-release-6.0.0
   echo "-----> start to configure GECODE"
