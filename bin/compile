@@ -16,6 +16,9 @@ function indent() {
 }
 
 cd $BUILD_DIR
+if [ -d "/app" ]; then
+  echo "-----> /app dir exists!!!, lets move files to them"
+fi
 echo "-----> Downloading GECODE"
 #download gecode
 wget https://github.com/Gecode/gecode/archive/release-6.0.0.zip
@@ -34,10 +37,7 @@ make
 
 echo "-----> installing GECODE"
 #TODO: if install isn't possible, then copy files to app & linking
-if [ -d "/app" ]; then
-  echo "-----> /app dir exists!!!, lets move files to them"
-fi
-sudo make install
+make install
 
 # configure
 if [ -f configure ]; then
