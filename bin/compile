@@ -25,23 +25,16 @@ else
   wget https://github.com/Gecode/gecode/archive/release-6.0.0.zip
   echo "-----> Unpacking GECODE"
   #unpack gecode
-  unzip release-6.0.0.zip
+  unzip release-6.0.0.zip -d gecode
   ls
   #go to gecode's folder
-  #cd gecode-release-6.0.0
+  cd gecode
   echo "-----> start to configure GECODE"
-  #./configure --disable-examples
+  ./configure --disable-examples
   echo "-----> compiling GECODE"
   #make
-  echo "-----> moving compiled GECODE to /app folder"
-  #copy files to app & linking
-  cd ..
-  #cp -R gecode-release-6.0.0 /app/gecode
 fi
-echo "-----> moving to /app folder"
-cd /app
-echo "-----> content of app folder"
-ls 
+
 # configure
 if [ -f configure ]; then
   echo "-----> Configuring"
