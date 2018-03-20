@@ -14,28 +14,28 @@ function indent() {
     *)      sed -u "$c";;
   esac
 }
+cd $BUILD_DIR
 echo "-----> check current path"
 ls -a
-cd $BUILD_DIR
 if [ -d "/app/gecode" ]; then
   echo "-----> /app/gecode exists, just compile solver"
 else 
   echo "-----> Downloading GECODE"
   #download gecode
-  wget https://github.com/Gecode/gecode/archive/release-6.0.0.zip
+  #wget https://github.com/Gecode/gecode/archive/release-6.0.0.zip
   echo "-----> Unpacking GECODE"
   #unpack gecode
-  unzip release-6.0.0.zip
+  #unzip release-6.0.0.zip
   #go to gecode's folder
-  cd gecode-release-6.0.0
+  #cd gecode-release-6.0.0
   echo "-----> start to configure GECODE"
-  ./configure --disable-examples
+  #./configure --disable-examples
   echo "-----> compiling GECODE"
-  make
+  #make
   echo "-----> moving compiled GECODE to /app folder"
   #copy files to app & linking
   cd ..
-  cp -R gecode-release-6.0.0 /app/gecode
+  #cp -R gecode-release-6.0.0 /app/gecode
 fi
 echo "-----> moving to /app folder"
 cd /app
@@ -49,4 +49,4 @@ fi
 
 # make
 echo "-----> Compiling with Make..."
-make all-heroku | indent
+#make all-heroku | indent
