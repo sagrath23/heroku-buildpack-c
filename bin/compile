@@ -25,17 +25,17 @@ else
   wget https://github.com/Gecode/gecode/archive/release-6.0.0.zip
   echo "-----> Unpacking GECODE"
   #unpack gecode
-  unzip release-6.0.0.zip -d gecode
+  unzip release-6.0.0.zip
   ls
   #go to gecode's folder
-  echo "-----> Moving to GECODE folder"
-  cd gecode
+  cd gecode-release-6.0.0
   echo "-----> start to configure GECODE"
   ./configure --disable-examples
   echo "-----> compiling GECODE"
   #make
   cd ..
 fi
+
 # configure
 if [ -f configure ]; then
   echo "-----> Configuring"
