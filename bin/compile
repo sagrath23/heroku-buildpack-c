@@ -34,9 +34,10 @@ else
   echo "-----> compiling GECODE"
   make
   echo "-----> leaving GECODE directory"
+  ls
   cd ..
 fi
-
+ls
 # configure
 if [ -f configure ]; then
   echo "-----> Configuring"
