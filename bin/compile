@@ -36,8 +36,8 @@ else
   echo "-----> leaving GECODE directory"
   ls
   echo "-----> copying GECODE files to solver compile directory"
-  cp -R gecode-release-6.0.0 models/solver/gecode
   cd ..
+  cp -R gecode-release-6.0.0 models/solver/gecode
 fi
 ls
 # configure
